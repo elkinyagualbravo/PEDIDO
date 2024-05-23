@@ -1,0 +1,25 @@
+package org.example;
+
+import java.util.Date;
+
+public class Main {
+    private static String[] args;
+
+    public Main() {
+    }
+    public static void main(String[] args) {
+        Main.args = args;
+        Pedido pedido = new Pedido(25, new Date(), 10.5, "Prueba");
+        pedido.solicitar();
+        pedido.cancelarPedido();
+        pedido.calcularTotal();
+        pedido.reiniciarEstado();
+
+        Cliente cliente = new Cliente(1, "elkin", "Calle 143", "123456789", "elkin@example.com", 30);
+
+        cliente.agregarPedido(new Pedido(25, new Date(), 10.5, "Prueba"));
+        cliente.eliminarPedido(new Pedido(25, new Date(), 10.5, "Prueba"));
+        cliente.actualizarDatos();
+        cliente.verHistorial();
+    }
+}
